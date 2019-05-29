@@ -1,17 +1,19 @@
-#创建express项目
+#node-express-wordpress
+    一个使用express+wordpress的项目模板
+##创建express项目
     express wrodpress-webserver
-#安装express-php-fpm   
+##安装express-php-fpm   
     [github](https://github.com/pravdomil/express-php-fpm)
     npm i express-php-fpm
-#安装php 
+##安装php 
     https://windows.php.net/download/#php-7.3-ts-VC15-x64
-#下载安装mysql
+##下载安装mysql
     注意设置密码
-#下载phpmyadmin并将文件拷贝到{php-web-root}
+##下载phpmyadmin并将文件拷贝到{php-web-root}
     https://www.phpmyadmin.net/
-#修改php.ini文件
+##修改php.ini文件
     php.ini
-#修改 php-fpm.bat 并启动php服务器
+##修改 php-fpm.bat 并启动php服务器
 ###打开注释并修改
     extension_dir = "./ext"
 ###添加扩展
@@ -27,14 +29,14 @@
         include         fastcgi_params;
     }
 ```
-#修改app.js
+##修改app.js
 ```javascript
     const express = require("express")
     const epf = require("express-php-fpm").default
 
     const options = {
       // root of your php files
-      documentRoot: __dirname + "/php_files",
+      documentRoot: __dirname + "/{php-web-root}",
 
       // extra env variables
       env: {},
@@ -48,7 +50,7 @@
     app.use("/", epf(options))
     app.listen(3000)
 ```
-#启动express
+##启动express
     npm start
-#访问phpmyadmin增加wordpress数据库
-#访问网站按照引导设置网站
+##访问phpmyadmin增加wordpress数据库
+##下载wordpress并将文件拷贝到{php-web-root},并访问网站按照引导设置网站
