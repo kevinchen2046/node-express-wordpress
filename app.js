@@ -22,7 +22,7 @@ var app = express();
 
 const options = {
   // root of your php files
-  documentRoot: __dirname + "/wordpress",
+  documentRoot: __dirname + "/webroot",
 
   // extra env variables
   env: {},
